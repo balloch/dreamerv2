@@ -6,7 +6,8 @@ import dreamerv2.api as dv2
 
         
 config = dv2.defaults.update({
-    'logdir': '/srv/essa-lab/flash3/jballoch6/logs/dreamer',
+    # 'logdir': '/srv/essa-lab/flash3/jballoch6/logs/dreamer',
+    'logdir': '/home/balloch/logs/dreamer',
     'log_every': 1e3,
     'train_every': 10,
     'prefill': 1e5,
@@ -24,7 +25,7 @@ config = dv2.defaults.update({
 }).parse_flags()
 
 #env = gym.make('MiniGrid-LavaShortcutMaze8x8-v0')
-env = gym.make('MiniGrid-DoorKey-8x8-v0')
+env = gym.make('MiniGrid-DoorKey-16x16-v0')
 env = gym_minigrid.wrappers.RGBImgObsWrapper(env,tile_size=8)
 #env = DoorKeyChange(env,novelty_episode=50000)
 #env = ImperviousToLava(env,novelty_episode=50000)

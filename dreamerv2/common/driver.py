@@ -53,6 +53,12 @@ class Driver:
         step += 1
         if ob['is_last']:
           ep = self._eps[i]
+          #import pdb
+          #pdb.set_trace()
+
+          if 'direction' in ep[0]:
+              import pdb
+              pdb.set_trace()
           ep = {k: self._convert([t[k] for t in ep]) for k in ep[0]}
           [fn(ep, **self._kwargs) for fn in self._on_episodes]
           episode += 1
